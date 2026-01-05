@@ -50,4 +50,4 @@ On the same page, expand "Subscribe to bot events" and add `app_mention` and `me
 
 > Step 5: Start the bot program
 
-Since the connection is using WebSocket. Invite the bot to a channel. 
+Since the connection is using WebSocket, we just spin up the local process. Invite the bot to a channel.

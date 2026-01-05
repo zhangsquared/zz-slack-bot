@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	// "log"
 	"os"
 	"strings"
 
@@ -66,7 +65,9 @@ func main() {
 						threadTs = ev.TimeStamp
 					}
 					thread := slack.MsgOptionTS(threadTs)
-					api.PostMessage(ev.Channel, text, thread)
+					api.PostMessage(ev.Channel, text, thread) // ack the mention first
+					// Then process the request
+					ProcessRequest(api, ev)
 
 				case *slackevents.MessageEvent:
 					// Triggered on channel messages (ignore bot messages)
